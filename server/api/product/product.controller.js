@@ -5,10 +5,12 @@ const getProductsController = async (req, res, next) => {
   let limit = parseInt(req.query.limit) || 100;
   let skip = parseInt(req.query.skip) || 0;
   let name = req.query.name && req.query.name.trim();
+  let order = req.query.order || "desc";
+  console.log("");
   try {
     let products;
-    if (name) products = await searchProducts(name, limit, skip);
-    else products = await retrieveProducts(limit, skip);
+    if (name) products = await searchProducts({ name, limit, skip, order });
+    else products = await retrieveProducts({ limit, skip, order });
     res.status(200).send({ products });
   } catch (e) {
     // console.error(e.message);

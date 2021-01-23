@@ -1,12 +1,21 @@
-<div class="seearch_box">
-  <input
-    type="text"
-    id="name"
-    placeholder="Search books"
-    [formControl]="searchField"
-  />
-  <span class="material-icons"> search </span>
+<div class="controls">
+  <div class="seearch_box">
+    <input
+      type="text"
+      id="name"
+      placeholder="Search books"
+      [formControl]="searchField"
+    />
+    <span class="material-icons"> search </span>
+  </div>
+  <button class="sort-button" (click)="toggleOrder()">
+    <i class="material-icons"> star </i>
+    <i class="material-icons">
+      {{ order == "desc" ? "keyboard_arrow_down" : "keyboard_arrow_up" }}
+    </i>
+  </button>
 </div>
+
 <div class="products">
   <ng-container *ngFor="let product of products">
     <app-product [product]="product"></app-product>

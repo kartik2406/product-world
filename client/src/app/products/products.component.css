@@ -25,3 +25,16 @@ app-product {
   width: 92%;
   padding: 1rem;
 }
+
+.controls {
+  display: flex;
+  align-items: center;
+}
+
+.sort-button {
+  display: flex;
+}
+
+.sort-button i:last-of-type {
+  margin-top: 0.25rem;
+}

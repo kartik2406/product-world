@@ -10,9 +10,10 @@ import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 export class ProductsComponent implements OnInit {
   products = [];
   searchField: FormControl;
+  searchText: string;
   limit = 100;
   skip = 0;
-
+  order = 'desc';
   constructor(private apiService: ApiService) {}
 
   ngOnInit(): void {
@@ -22,20 +23,29 @@ export class ProductsComponent implements OnInit {
       .pipe(debounceTime(400))
       .pipe(distinctUntilChanged())
       .subscribe((value) => {
-        this.listProducts(value);
+        this.searchText = this.searchField.value;
+        this.listProducts();
       }); // Need to call subscr
   }
 
-  listProducts(name?: string) {
+  listProducts() {
     this.apiService
       .getProducts({
         limit: this.limit,
         skip: this.skip,
-        name,
+        name: this.searchText,
+        order: this.order,
       })
       .subscribe((products) => {
         this.products = products;
         console.log('products', products);
       });
+  }
+
+  toggleOrder() {
+    if (this.order === 'desc') this.order = 'asc';
+    else this.order = 'desc';
+
+    this.listProducts();
   }
 }

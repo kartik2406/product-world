@@ -8,7 +8,7 @@
     />
     <span class="material-icons"> search </span>
   </div>
-  <button class="sort-button" (click)="toggleOrder()">
+  <button class="sort-button" (click)="toggleOrder()" title="Sort by ratings">
     <i class="material-icons"> star </i>
     <i class="material-icons">
       {{ order == "desc" ? "keyboard_arrow_down" : "keyboard_arrow_up" }}
@@ -18,6 +18,10 @@
 
 <div class="products">
   <ng-container *ngFor="let product of products">
-    <app-product [product]="product"></app-product>
+    <app-product
+      [product]="product"
+      (add)="addToCart($event)"
+      (remove)="removeFromCart($event)"
+    ></app-product>
   </ng-container>
 </div>

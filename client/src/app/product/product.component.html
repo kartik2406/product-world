@@ -1,4 +1,18 @@
 <div *ngIf="product" class="product">
+  <button
+    *ngIf="!product.isInCart"
+    class="btn-rounded cart-btn"
+    (click)="addToCart(product)"
+  >
+    <i class="material-icons"> add_shopping_cart </i>
+  </button>
+  <button
+    *ngIf="product.isInCart"
+    class="btn-rounded cart-btn remove-button"
+    (click)="removeFromCart(product)"
+  >
+    <i class="material-icons"> remove_shopping_cart </i>
+  </button>
   <div class="picture">
     <img src="{{ product.image }}" />
   </div>

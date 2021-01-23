@@ -8,7 +8,10 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProductComponent } from './product/product.component';
 import { ApiService } from './api.service';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CartComponent } from './cart/cart.component';
+import { CartService } from './cart.service';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +20,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NavBarComponent,
     FooterComponent,
     ProductComponent,
+    CartComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -24,7 +29,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     AppRoutingModule,
   ],
-  providers: [ApiService],
+  providers: [ApiService, CartService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

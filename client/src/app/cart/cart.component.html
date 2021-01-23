@@ -1,0 +1,24 @@
+<ng-container *ngIf="cartService.cartItems.length">
+  <div class="cart-items">
+    <div *ngFor="let item of cartService.cartItems" class="cart-item">
+      <div class="picture"><img src="{{ item.image }}" /></div>
+      <div class="info">
+        <span class="item-name bold">{{ item.name }}</span>
+        <span class="item-price">{{ item.price }}</span>
+      </div>
+    </div>
+  </div>
+  <div class="total">
+    <span class="total-text bold">Total</span>
+    <span>{{ cartService.getTotal() }}</span>
+  </div>
+  <div class="checkout-options">
+    <button class="btn-link">Checkout</button>
+  </div>
+</ng-container>
+<div *ngIf="!cartService.cartItems.length" class="empty-cart">
+  <h4 class="empty-cart-msg">There is nothing in your cart</h4>
+  <button class="btn-cornered btn--large" routerLink="/">
+    Continue Shopping
+  </button>
+</div>

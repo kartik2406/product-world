@@ -2,7 +2,6 @@
 // require("./db");
 
 const axios = require("axios");
-const Product = require("../db/models/product");
 const fs = require("fs");
 
 axios(

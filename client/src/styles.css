@@ -1,0 +1,97 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+a {
+  color: var(--text-color-primary);
+  text-decoration: none;
+}
+a:visited {
+  color: var(--text-color-primary);
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+button {
+  background: none;
+  border: none;
+  color: var(--text-color-primary);
+}
+input {
+  background: none;
+  border: none;
+  outline: none;
+}
+
+:root {
+  --background: #20232a;
+  --background-variant: #282c34;
+  --text-color-primary: #fffffe;
+  --text-color-secondary: #94a1b2;
+  --primary: #61dafb;
+  --secondary: #72757e;
+  --tertiary: #2cb67d;
+  --progress-bar-background: rgba(44, 182, 125, 0.5);
+  --progress-bar-status: var(--tertiary);
+  --base-font-family: "Nunito", sans-serif;
+  --base-font-size: 18px;
+  --header-height: 40px;
+  --container-top-margin: 40px;
+  /* These two properties are used to set the width, min of them would be used */
+  --container-size-percent: 90%;
+  --container-size-relative: 72rem;
+  --container-padding: 2%;
+  --container-centered-padding: 10%;
+  --content-main-size: 80%;
+  --content-aside-size: 20%;
+  --footer-height: 100px;
+  --footer-margin: 200px;
+}
+
+app-root {
+  background: var(--background);
+  color: var(--text-color-secondary);
+  font-size: var(--base-font-size);
+  font-family: var(--base-font-family);
+  overflow-x: hidden;
+  outline: none;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin: 0;
+  height: 100vh;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.container {
+  margin-top: var(--container-top-margin);
+  padding: 0 var(--container-padding) 0 var(--container-padding);
+  margin-inline: auto;
+  width: min(var(--container-size-percent), var(--container-size-relative));
+}
+
+.bold {
+  font-weight: bolder;
+}
+
+.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

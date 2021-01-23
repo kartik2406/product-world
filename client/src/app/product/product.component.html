@@ -1,0 +1,27 @@
+<div *ngIf="product" class="product">
+  <div class="picture">
+    <img src="{{ product.image }}" />
+  </div>
+  <div class="info">
+    <span class="name line-clamp">{{ product.name }}</span>
+    <span class="price">
+      <i class="material-icons">attach_money</i> {{ product.price }}</span
+    >
+    <span class="authors" title="Authors">
+      <i class="material-icons">groups</i> {{ product.authors }}</span
+    >
+    <span class="average-rating" title="Ratings">
+      <i class="material-icons">star_border</i>
+      {{ product.average_rating }}</span
+    >
+    <span class="isbn">
+      <i class="material-icons" title="ISBN">code</i>{{ product.isbn }}</span
+    >
+    <span class="language_code" title="Language">
+      <i class="material-icons">language</i> {{ product.language_code }}</span
+    >
+    <span class="rating_count" title="Total ratings">
+      <i class="material-icons">person</i> {{ product.ratings_count }}</span
+    >
+  </div>
+</div>

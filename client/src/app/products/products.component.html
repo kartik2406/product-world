@@ -1,0 +1,14 @@
+<div class="seearch_box">
+  <input
+    type="text"
+    id="name"
+    placeholder="Search books"
+    [formControl]="searchField"
+  />
+  <span class="material-icons"> search </span>
+</div>
+<div class="products">
+  <ng-container *ngFor="let product of products">
+    <app-product [product]="product"></app-product>
+  </ng-container>
+</div>

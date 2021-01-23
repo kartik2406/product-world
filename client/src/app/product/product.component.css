@@ -1,0 +1,40 @@
+.product .picture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.product .picture img {
+  width: 150px;
+  height: 150px;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  background: var(--background-variant);
+  flex: 1 1 19%;
+  gap: 1rem;
+  height: auto;
+  border-radius: 5px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.info * {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.name {
+  align-self: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  max-width: 14rem;
+  max-height: 5rem;
+}

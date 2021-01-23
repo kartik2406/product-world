@@ -1,0 +1,19 @@
+.navbar {
+  display: flex;
+  padding: 1rem;
+  justify-content: space-between;
+}
+
+.navbar__app {
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar__links {
+  display: flex;
+  gap: 1rem;
+}
+
+.link {
+  cursor: pointer;
+}

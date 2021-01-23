@@ -1,0 +1,27 @@
+.products {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+app-product {
+  flex: 1 1 19%;
+  display: flex;
+}
+.seearch_box {
+  margin-bottom: 2.5rem;
+  display: flex;
+  width: 80%;
+  margin: 2.5rem auto;
+  border-radius: 50px;
+  box-shadow: 0px 0px 5px var(--text-color-primary);
+  align-items: center;
+}
+.seearch_box:focus-within {
+  box-shadow: 0px 0px 10px var(--primary);
+}
+.seearch_box input {
+  color: var(--text-color-primary);
+  width: 92%;
+  padding: 1rem;
+}

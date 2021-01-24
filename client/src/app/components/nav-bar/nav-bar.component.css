@@ -26,6 +26,7 @@
   position: relative;
   padding: 0.5rem;
   transition: 0.2s;
+  cursor: pointer;
 }
 
 .navbar__link .cart-item-total {
@@ -58,4 +59,9 @@
   .navbar__app__name {
     font-size: 2.5rem;
   }
+}
+
+.user-options {
+  display: flex;
+  align-items: center;
 }

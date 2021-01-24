@@ -22,4 +22,8 @@ export class AuthService {
   isLoggedIn() {
     return localStorage.getItem(TOKEN_KEY) ? true : false;
   }
+
+  logout() {
+    localStorage.removeItem(TOKEN_KEY);
+  }
 }

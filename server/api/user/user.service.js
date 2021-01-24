@@ -1,7 +1,7 @@
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const saltRounds = process.env.SALT_ROUNDS || 10;
-const SECRET = process.env.SALT_ROUNDS || "secret";
+const SECRET = process.env.SECRET || "SECRET";
 const UserModel = require("./user.model");
 
 const login = async (loignDetails) => {

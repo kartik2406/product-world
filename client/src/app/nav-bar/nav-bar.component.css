@@ -46,3 +46,16 @@
 .navbar__link .material-icons {
   font-size: 2rem;
 }
+
+.navbar__logo {
+  font-size: 3rem;
+}
+
+.navbar__app__name a {
+  font-family: "Philosopher", sans-serif;
+}
+@media only screen and (min-width: 800px) {
+  .navbar__app__name {
+    font-size: 2.5rem;
+  }
+}

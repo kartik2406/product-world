@@ -15,9 +15,9 @@ export class RouterExtraService {
   constructor(private router: Router) {
     this.currentUrl = this.router.url;
     router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        console.log('Router event', event, event instanceof NavigationEnd);
+      console.log('Router event', event, event instanceof NavigationEnd);
 
+      if (event instanceof NavigationEnd) {
         this.previousUrl = this.currentUrl;
         this.currentUrl = event.url;
       }

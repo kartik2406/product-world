@@ -147,3 +147,7 @@ app-loader {
   justify-content: center;
   display: flex;
 }
+
+.material-icons {
+  cursor: pointer;
+}

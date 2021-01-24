@@ -6,7 +6,10 @@
       placeholder="Search books"
       [formControl]="searchField"
     />
-    <span class="material-icons"> search </span>
+    <span *ngIf="!searchField.value" class="material-icons"> search </span>
+    <span *ngIf="searchField.value" class="material-icons" (click)="clear()">
+      clear
+    </span>
   </div>
   <button class="sort-button" (click)="toggleOrder()" title="Sort by ratings">
     <i class="material-icons"> star </i>

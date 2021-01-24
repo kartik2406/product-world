@@ -22,7 +22,7 @@ export class ApiService {
   }
   getProducts(filter: ProductFilter): Observable<any> {
     let queryString = Object.keys(filter)
-      .filter((key) => filter[key] !== undefined)
+      .filter((key) => filter[key] !== undefined && filter[key] !== '')
       .map((key) => `${key}=${filter[key]}`)
       .join('&');
     return forkJoin([

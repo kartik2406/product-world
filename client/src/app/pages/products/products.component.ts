@@ -114,6 +114,10 @@ export class ProductsComponent implements OnInit {
       }
     });
   }
+
+  clear() {
+    this.searchField.patchValue('');
+  }
   ngOnDestroy() {
     this.dummyDivObserver.unobserve(this.dummyDiv);
   }

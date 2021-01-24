@@ -7,7 +7,10 @@
   </div>
   <section class="navbar__links">
     <a class="navbar__link link" routerLink="/cart"
-      ><span class="material-icons"> shopping_cart </span></a
-    >
+      ><span class="material-icons"> shopping_cart </span>
+      <span *ngIf="cartService.cartItems.length" class="cart-item-total">
+        {{ cartService.cartItems.length }}
+      </span>
+    </a>
   </section>
 </header>

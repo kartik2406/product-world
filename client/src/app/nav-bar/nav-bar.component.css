@@ -21,3 +21,16 @@
 .navbar__app {
   cursor: pointer;
 }
+
+.navbar__link {
+  position: relative;
+  padding: 0.5rem;
+}
+
+.navbar__link .cart-item-total {
+  top: -10%;
+  left: 50%;
+  position: absolute;
+  font-size: 0.8rem;
+  font-style: italic;
+}

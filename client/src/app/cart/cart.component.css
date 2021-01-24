@@ -12,6 +12,7 @@
   gap: 1.5rem;
   align-items: center;
   border-radius: 10px;
+  position: relative;
 }
 
 .cart-item .picture img {
@@ -56,4 +57,11 @@
 
 .empty-cart-msg {
   font-size: 2rem;
+}
+
+.remove-from-cart {
+  position: absolute;
+  right: -2%;
+  top: -10%;
+  color: var(--danger);
 }

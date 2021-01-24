@@ -6,6 +6,9 @@
         <span class="item-name bold">{{ item.name }}</span>
         <span class="item-price">{{ item.price }}</span>
       </div>
+      <button class="btn-link remove-from-cart" (click)="removeFromCart(item)">
+        <i class="material-icons"> clear </i>
+      </button>
     </div>
   </div>
   <div class="total">

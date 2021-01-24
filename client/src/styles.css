@@ -37,6 +37,11 @@ input {
 p {
   line-height: 2rem;
 }
+button,
+a,
+div {
+  outline: none;
+}
 
 :root {
   --background: #20232a;

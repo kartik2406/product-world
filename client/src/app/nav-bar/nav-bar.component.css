@@ -25,6 +25,7 @@
 .navbar__link {
   position: relative;
   padding: 0.5rem;
+  transition: 0.2s;
 }
 
 .navbar__link .cart-item-total {
@@ -33,4 +34,15 @@
   position: absolute;
   font-size: 0.8rem;
   font-style: italic;
+  background: var(--primary);
+  padding: 0 0.4rem;
+  border-radius: 5px;
+  color: rgb(0, 0, 0);
+}
+
+.navbar__link:hover {
+  transform: scale(1.2);
+}
+.navbar__link .material-icons {
+  font-size: 2rem;
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../api.service';
+import { ApiService, Product } from '../api.service';
 import { AuthService } from '../auth.service';
 import { CartService } from '../cart.service';
 
@@ -27,5 +27,10 @@ export class CartComponent implements OnInit {
         window.location.href = res.redirectUrl;
         console.log('checkout res', res);
       });
+  }
+
+  removeFromCart(product: Product) {
+    console.log('removeFromCart', product);
+    this.cartService.removeFromCart(product);
   }
 }

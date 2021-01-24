@@ -3,7 +3,21 @@ const escapeStringRegexp = require("escape-string-regexp");
 
 const retrieveProducts = async ({ limit, skip, order }) => {
   try {
-    let products = await ProductModel.find()
+    let products = await ProductModel.aggregate([
+      {
+        $project: {
+          type: 1,
+          _id: 1,
+          authors: 1,
+          average_rating: 1,
+          isbn: 1,
+          language_code: 1,
+          ratings_count: 1,
+          price: 1,
+          name: { $substr: ["$name", 0, 100] },
+        },
+      },
+    ])
       .sort({ average_rating: order })
       .skip(skip)
       .limit(limit);

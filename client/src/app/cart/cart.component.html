@@ -13,7 +13,7 @@
     <span>{{ cartService.getTotal() }}</span>
   </div>
   <div class="checkout-options">
-    <button class="btn-link">Checkout</button>
+    <button class="btn-link" (click)="checkout()">Checkout</button>
   </div>
 </ng-container>
 <div *ngIf="!cartService.cartItems.length" class="empty-cart">

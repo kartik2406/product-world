@@ -2,11 +2,23 @@
   <h5 class="sign-in-msg">Sign in to continue</h5>
   <form action="javascript:void(0)" class="form">
     <div class="form__input">
-      <input type="text" placeholder="Username" aria-label="username" />
+      <input
+        type="text"
+        name="username"
+        [(ngModel)]="username"
+        placeholder="Username"
+        aria-label="username"
+      />
     </div>
     <div class="form__input">
-      <input type="text" placeholder="password" aria-label="password" />
+      <input
+        type="text"
+        name="password"
+        [(ngModel)]="password"
+        placeholder="password"
+        aria-label="password"
+      />
     </div>
-    <button class="form__submit">sign in</button>
+    <button class="form__submit" (click)="login()">sign in</button>
   </form>
 </div>

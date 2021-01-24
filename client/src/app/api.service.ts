@@ -72,4 +72,8 @@ export class ApiService {
         })
       );
   }
+
+  checkout(paymentDetails) {
+    return this.http.post('/api/cart/checkout', paymentDetails);
+  }
 }

@@ -22,7 +22,6 @@
 .form__input input,
 .form__submit {
   font-family: inherit;
-  text-transform: uppercase;
   font-weight: 800;
   font-size: 1rem;
   letter-spacing: 1.2px;
@@ -67,6 +66,7 @@
   background: var(--background-variant);
   color: var(--text-color-primary);
   padding: 1rem 1rem;
+  text-transform: uppercase;
 }
 .form__submit:focus,
 .form__submit:hover {

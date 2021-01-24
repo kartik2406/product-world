@@ -12,4 +12,11 @@ app.use(bodyParser.json());
 
 app.use("/api", routes);
 
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("public"));
+  app.get("*", (req, res) => {
+    res.sendFile(process.cwd() + "/public/index.html");
+  });
+}
+
 module.exports = app;

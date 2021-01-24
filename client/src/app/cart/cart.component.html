@@ -4,7 +4,10 @@
       <div class="picture"><img src="{{ item.image }}" /></div>
       <div class="info">
         <span class="item-name bold">{{ item.name }}</span>
-        <span class="item-price">{{ item.price }}</span>
+        <span class="item-price">
+          <app-rupee-icon> </app-rupee-icon>
+          {{ item.price }}</span
+        >
       </div>
       <button class="btn-link remove-from-cart" (click)="removeFromCart(item)">
         <i class="material-icons"> clear </i>
@@ -13,7 +16,10 @@
   </div>
   <div class="total">
     <span class="total-text bold">Total</span>
-    <span>{{ cartService.getTotal() }}</span>
+    <span class="total-ammount">
+      <app-rupee-icon> </app-rupee-icon>
+      {{ cartService.getTotal() }}</span
+    >
   </div>
   <div class="checkout-options">
     <button class="btn-link" (click)="checkout()">Checkout</button>
@@ -21,7 +27,5 @@
 </ng-container>
 <div *ngIf="!cartService.cartItems.length" class="empty-cart">
   <h4 class="empty-cart-msg">There is nothing in your cart</h4>
-  <button class="btn-cornered btn--large" routerLink="/">
-    Continue Shopping
-  </button>
+  <button class="btn-link btn--large" routerLink="/">Continue Shopping</button>
 </div>

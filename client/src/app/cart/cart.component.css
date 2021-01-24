@@ -65,3 +65,8 @@
   top: -10%;
   color: var(--danger);
 }
+
+.item-price,
+.total-ammount {
+  display: flex;
+}

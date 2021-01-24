@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { ApiService, Product } from '../api.service';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
-import { CartService } from '../cart.service';
+import { Product } from 'src/app/models/product';
+import { ApiService } from 'src/app/services/api.service';
+import { CartService } from '../../services/cart.service';
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',

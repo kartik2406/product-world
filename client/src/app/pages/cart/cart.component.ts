@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ApiService, Product } from '../api.service';
-import { AuthService } from '../auth.service';
-import { CartService } from '../cart.service';
+import { Product } from 'src/app/models/product';
+import { ApiService } from 'src/app/services/api.service';
+import { AuthService } from '../../services/auth.service';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-cart',

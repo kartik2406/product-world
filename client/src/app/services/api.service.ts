@@ -4,26 +4,8 @@ import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import { from, forkJoin } from 'rxjs';
 import { CartService } from './cart.service';
+import { ProductFilter } from '../models/productFilter';
 
-export interface Product {
-  _id: String;
-  name: string;
-  authors: String;
-  average_rating: string;
-  isbn: number;
-  langauge_code: string;
-  price: number;
-  ratings_count: number;
-  type: string;
-  isInCart?: boolean;
-}
-
-export interface ProductFilter {
-  name?: string;
-  limit: number;
-  skip: number;
-  order: string;
-}
 @Injectable({
   providedIn: 'root',
 })

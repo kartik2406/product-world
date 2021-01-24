@@ -10,7 +10,7 @@
     "server"
   ],
   "scripts": {
-    "build": "cd client && ng build --prod && mkdir -p ../server/public && cp -r ./dist/* ../server/public",
+    "build": "cd client && ng build --prod --base-href='https://product-world.herokuapp.com/' && mkdir -p ../server/public && cp -r ./dist/* ../server/public",
     "start": "node ."
   },
   "keywords": [],

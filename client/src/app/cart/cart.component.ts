@@ -25,12 +25,12 @@ export class CartComponent implements OnInit {
       })
       .subscribe((res: any) => {
         window.location.href = res.redirectUrl;
-        console.log('checkout res', res);
+        // console.log('checkout res', res);
       });
   }
 
   removeFromCart(product: Product) {
-    console.log('removeFromCart', product);
+    // console.log('removeFromCart', product);
     this.cartService.removeFromCart(product);
   }
 }

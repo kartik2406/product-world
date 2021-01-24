@@ -16,7 +16,8 @@ export class ProductsComponent implements OnInit {
   skip = 0;
   order = 'desc';
   cartItems: Product[] = [];
-
+  dummyDivObserver;
+  dummyDiv;
   constructor(
     private apiService: ApiService,
     private cartService: CartService
@@ -32,6 +33,34 @@ export class ProductsComponent implements OnInit {
         this.searchText = this.searchField.value;
         this.listProducts();
       }); // Need to call subscr
+    this.dummyDiv = document.querySelector('.dummy');
+    this.dummyDivObserver = new IntersectionObserver(
+      (entry, observer) => {
+        console.log('entry', entry);
+        let isDivVissible = entry[0].isIntersecting;
+        if (isDivVissible && this.products.length) {
+          console.log('entry:', entry);
+          console.log('observer:', observer);
+          this.skip += this.limit;
+          this.apiService
+            .getProducts({
+              limit: this.limit,
+              skip: this.skip,
+              name: this.searchText,
+              order: this.order,
+            })
+            .subscribe((products) => {
+              this.products.push(...products);
+              // console.log('products', products);
+            });
+        }
+      },
+      {
+        rootMargin: '-600px 20px 75px 30px',
+      }
+    );
+
+    this.dummyDivObserver.observe(this.dummyDiv);
   }
 
   listProducts() {
@@ -44,7 +73,7 @@ export class ProductsComponent implements OnInit {
       })
       .subscribe((products) => {
         this.products = products;
-        console.log('products', products);
+        // console.log('products', products);
       });
   }
 
@@ -56,19 +85,23 @@ export class ProductsComponent implements OnInit {
   }
 
   addToCart(product: Product) {
-    console.log('Addd', product);
+    // console.log('Addd', product);
     // Add to cart will be an API call later
     this.cartService.addToCart(product);
     let currentProduct = this.products.find((item) => item._id == product._id);
     currentProduct.isInCart = true;
-    console.log('Current cart', this.cartService.getCartItems());
+    // console.log('Current cart', this.cartService.getCartItems());
   }
 
   removeFromCart(product: Product) {
-    console.log('Remove', product);
+    // console.log('Remove', product);
     this.cartService.removeFromCart(product);
     let currentProduct = this.products.find((item) => item._id == product._id);
     currentProduct.isInCart = false;
-    console.log('Current cart', this.cartService.getCartItems());
+    // console.log('Current cart', this.cartService.getCartItems());
+  }
+
+  ngOnDestroy() {
+    this.dummyDivObserver.unobserve(this.dummyDiv);
   }
 }

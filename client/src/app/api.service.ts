@@ -33,7 +33,7 @@ export class ApiService {
     const min = 0;
     const max = this.images.length;
     const randomIndex = Math.floor(Math.random() * (max - min) + min);
-    console.log(this.images, randomIndex);
+    // console.log(this.images, randomIndex);
     return this.images[randomIndex];
   }
   getProducts(filter: ProductFilter): Observable<any> {

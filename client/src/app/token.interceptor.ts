@@ -13,7 +13,7 @@ export class TokenInterceptor implements HttpInterceptor {
     request: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
-    console.log('request.url', request.url);
+    // console.log('request.url', request.url);
     if (request.url.startsWith('/'))
       request = request.clone({
         setHeaders: {

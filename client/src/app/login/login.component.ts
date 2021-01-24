@@ -15,14 +15,14 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
 
   login() {
-    console.log('this.username, this.pass', this.username, this.password);
+    // console.log('this.username, this.pass', this.username, this.password);
     this.authService
       .login({
         username: this.username,
         password: this.password,
       })
       .subscribe((res) => {
-        console.log('res', res);
+        // console.log('res', res);
         this.router.navigateByUrl('/products');
       });
   }

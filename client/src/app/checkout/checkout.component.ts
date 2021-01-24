@@ -15,8 +15,6 @@ export class CheckoutComponent implements OnInit {
     this.activatedRoute.queryParamMap.subscribe((query) => {
       this.status = query.get('payment_status');
       this.paymentId = query.get('payment_id');
-      console.log('tihs.status', this.status);
-      console.log('Params', query);
     });
   }
 }

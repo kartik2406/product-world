@@ -38,3 +38,9 @@ app-product {
 .sort-button i:last-of-type {
   margin-top: 0.25rem;
 }
+
+.dummy {
+  /* background: var(--primary); */
+  width: 100%;
+  height: 5rem;
+}

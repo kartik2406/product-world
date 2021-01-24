@@ -18,7 +18,8 @@ import { TokenInterceptor } from './token.interceptor';
 import { RupeeIconComponent } from './rupee-icon/rupee-icon.component';
 import { LoaderComponent } from './loader/loader.component';
 import { RouterExtraService } from './routerExtraService';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,10 +35,12 @@ import { RouterExtraService } from './routerExtraService';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
+    ToastrModule.forRoot(),
   ],
   providers: [
     {

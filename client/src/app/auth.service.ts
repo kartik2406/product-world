@@ -18,4 +18,8 @@ export class AuthService {
       })
     );
   }
+
+  isLoggedIn() {
+    return localStorage.getItem(TOKEN_KEY) ? true : false;
+  }
 }

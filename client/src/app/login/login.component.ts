@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ApiService } from '../api.service';
 import { AuthService } from '../auth.service';
+import { RouterExtraService } from '../routerExtraService';
 
 @Component({
   selector: 'app-login',
@@ -10,9 +12,16 @@ import { AuthService } from '../auth.service';
 export class LoginComponent implements OnInit {
   username: string;
   password: string;
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(
+    private apiService: ApiService,
+    private authService: AuthService,
+    private router: Router,
+    private routerExtras: RouterExtraService
+  ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log();
+  }
 
   login() {
     // console.log('this.username, this.pass', this.username, this.password);
@@ -23,7 +32,10 @@ export class LoginComponent implements OnInit {
       })
       .subscribe((res) => {
         // console.log('res', res);
-        this.router.navigateByUrl('/products');
+        console.log('prev url', this.routerExtras.getPreviousUrl());
+        if (this.routerExtras.getPreviousUrl() == '/cart')
+          this.apiService.checkout().subscribe();
+        else this.router.navigateByUrl('/products');
       });
   }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ApiService, Product } from '../api.service';
 import { AuthService } from '../auth.service';
 import { CartService } from '../cart.service';
@@ -11,22 +12,19 @@ import { CartService } from '../cart.service';
 export class CartComponent implements OnInit {
   constructor(
     public cartService: CartService,
-    private apiService: ApiService
+    private apiService: ApiService,
+    private authService: AuthService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {}
 
   checkout() {
-    this.apiService
-      .checkout({
-        amount: this.cartService.getTotal(),
-        purpose: 'Payment for books',
-        redirectUrl: `${window.location.origin}/checkout`,
-      })
-      .subscribe((res: any) => {
-        window.location.href = res.redirectUrl;
-        // console.log('checkout res', res);
-      });
+    if (!this.authService.isLoggedIn())
+      return this.router.navigateByUrl('/login');
+    this.apiService.checkout().subscribe((res: any) => {
+      // console.log('checkout res', res);
+    });
   }
 
   removeFromCart(product: Product) {

@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { map, switchMap } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 import { from, forkJoin } from 'rxjs';
+import { CartService } from './cart.service';
 
 export interface Product {
   _id: String;
@@ -28,7 +29,7 @@ export interface ProductFilter {
 })
 export class ApiService {
   images: [];
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private cartService: CartService) {}
 
   getRandomImage() {
     const min = 0;
@@ -74,7 +75,16 @@ export class ApiService {
       );
   }
 
-  checkout(paymentDetails) {
-    return this.http.post('/api/cart/checkout', paymentDetails);
+  checkout() {
+    const paymentDetails = {
+      amount: this.cartService.getTotal(),
+      purpose: 'Payment for books',
+      redirectUrl: `${window.location.origin}/checkout`,
+    };
+    return this.http.post('/api/cart/checkout', paymentDetails).pipe(
+      tap((res: any) => {
+        window.location.href = res.redirectUrl;
+      })
+    );
   }
 }

@@ -17,6 +17,7 @@ import { AuthService } from './auth.service';
 import { TokenInterceptor } from './token.interceptor';
 import { RupeeIconComponent } from './rupee-icon/rupee-icon.component';
 import { LoaderComponent } from './loader/loader.component';
+import { RouterExtraService } from './routerExtraService';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { LoaderComponent } from './loader/loader.component';
     AuthService,
     ApiService,
     CartService,
+    RouterExtraService,
   ],
   bootstrap: [AppComponent],
 })

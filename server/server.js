@@ -15,7 +15,7 @@ app.use("/api", routes);
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("public"));
   app.get("*", (req, res) => {
-    res.sendFile(process.cwd() + "/public/index.html");
+    res.sendFile(__dirname + "/public/index.html");
   });
 }
 

@@ -15,7 +15,7 @@
     </i>
   </button>
 </div>
-
+<app-loader *ngIf="isLoading"></app-loader>
 <div class="products">
   <ng-container *ngFor="let product of products">
     <app-product

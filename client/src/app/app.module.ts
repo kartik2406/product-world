@@ -16,6 +16,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { AuthService } from './auth.service';
 import { TokenInterceptor } from './token.interceptor';
 import { RupeeIconComponent } from './rupee-icon/rupee-icon.component';
+import { LoaderComponent } from './loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { RupeeIconComponent } from './rupee-icon/rupee-icon.component';
     LoginComponent,
     CheckoutComponent,
     RupeeIconComponent,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,

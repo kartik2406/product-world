@@ -18,6 +18,7 @@ export class ProductsComponent implements OnInit {
   cartItems: Product[] = [];
   dummyDivObserver;
   dummyDiv;
+  isLoading = true;
   constructor(
     private apiService: ApiService,
     private cartService: CartService
@@ -73,6 +74,7 @@ export class ProductsComponent implements OnInit {
         order: this.order,
       })
       .subscribe((products) => {
+        this.isLoading = false;
         this.products = products;
         this.setInCartFlag(this.products);
         // console.log('products', products);

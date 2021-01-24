@@ -141,3 +141,8 @@ main {
 .btn-link:hover {
   transform: scale(1.2);
 }
+
+app-loader {
+  justify-content: center;
+  display: flex;
+}

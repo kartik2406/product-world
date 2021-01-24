@@ -14,6 +14,7 @@ export interface Product {
   price: number;
   ratings_count: number;
   type: string;
+  isInCart?: boolean;
 }
 
 export interface ProductFilter {

@@ -74,6 +74,7 @@ export class ProductsComponent implements OnInit {
       })
       .subscribe((products) => {
         this.products = products;
+        this.setInCartFlag(this.products);
         // console.log('products', products);
       });
   }
@@ -102,6 +103,14 @@ export class ProductsComponent implements OnInit {
     // console.log('Current cart', this.cartService.getCartItems());
   }
 
+  setInCartFlag(products: Product[]) {
+    let inCartProducts = this.cartService.cartItems.map((item) => item._id);
+    products.forEach((product) => {
+      if (inCartProducts.includes(product._id)) {
+        product.isInCart = true;
+      }
+    });
+  }
   ngOnDestroy() {
     this.dummyDivObserver.unobserve(this.dummyDiv);
   }

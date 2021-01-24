@@ -12,7 +12,7 @@
     </div>
     <div class="form__input">
       <input
-        type="text"
+        type="password"
         name="password"
         [(ngModel)]="password"
         placeholder="password"
@@ -22,8 +22,10 @@
     <button class="form__submit" (click)="login()">sign in</button>
   </form>
 
-  <p>
-    If you do not have an account, create one for
-    <a clas="btn-link" routerLink="/register">free</a>.
+  <p class="registration-info">
+    If you do not have an account
+    <button class="btn-link register-btn" routerLink="/register">
+      create one for free
+    </button>
   </p>
 </div>

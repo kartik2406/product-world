@@ -25,6 +25,7 @@ app-product {
   color: var(--text-color-primary);
   width: 92%;
   padding: 1rem;
+  font-size: 1.5rem;
 }
 
 .controls {

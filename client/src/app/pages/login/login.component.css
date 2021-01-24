@@ -99,3 +99,12 @@
     height: initial;
   }
 }
+
+.register-btn {
+  padding: 0.2rem;
+}
+
+.registration-info {
+  display: flex;
+  flex-direction: column;
+}

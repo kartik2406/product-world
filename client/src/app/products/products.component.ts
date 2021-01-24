@@ -31,6 +31,7 @@ export class ProductsComponent implements OnInit {
       .pipe(distinctUntilChanged())
       .subscribe((value) => {
         this.searchText = this.searchField.value;
+        this.skip = 0;
         this.listProducts();
       }); // Need to call subscr
     this.dummyDiv = document.querySelector('.dummy');
@@ -80,7 +81,7 @@ export class ProductsComponent implements OnInit {
   toggleOrder() {
     if (this.order === 'desc') this.order = 'asc';
     else this.order = 'desc';
-
+    this.skip = 0;
     this.listProducts();
   }
 

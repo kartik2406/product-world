@@ -7,6 +7,7 @@
 app-product {
   flex: 1 1 19%;
   display: flex;
+  max-width: 24%;
 }
 .seearch_box {
   margin-bottom: 2.5rem;
@@ -33,6 +34,7 @@ app-product {
 
 .sort-button {
   display: flex;
+  cursor: pointer;
 }
 
 .sort-button i:last-of-type {

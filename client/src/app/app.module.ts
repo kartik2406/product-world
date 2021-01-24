@@ -20,6 +20,7 @@ import { RouterExtraService } from './services/routerExtraService';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { ApiService } from './services/api.service';
+import { RegisterComponent } from './pages/register/register.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +33,7 @@ import { ApiService } from './services/api.service';
     CheckoutComponent,
     RupeeIconComponent,
     LoaderComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

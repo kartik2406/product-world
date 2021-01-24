@@ -18,7 +18,9 @@ export class AuthService {
       })
     );
   }
-
+  register(loginDetails) {
+    return this.http.post('/api/users/register', loginDetails);
+  }
   isLoggedIn() {
     return localStorage.getItem(TOKEN_KEY) ? true : false;
   }
